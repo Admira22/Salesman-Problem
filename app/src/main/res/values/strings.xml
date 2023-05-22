@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Projekat</string>
+    <string name="title">About app</string>
+    <string name="intro">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nec dolor nec ex tempus feugiat non id ligula. Suspendisse elit velit.</string>
+    <string name="text">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nec dolor nec ex tempus feugiat non id ligula. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nec dolor nec ex tempus feugiat non id ligula. Suspendisse elit velit, fermentum vel justo a, volutpat malesuada libero.</string>
+    <string name="welcome">Welcome</string>
+    <string name="subtitle">Let\'s begin your journey!</string>
+    <string name="start">Start</string>
+    <string name="menu">Menu</string>
+    <string name="cites">List of cites</string>
+    <string name="about">About app</string>
+    <string name="seemore">See more</string>
+</resources>
