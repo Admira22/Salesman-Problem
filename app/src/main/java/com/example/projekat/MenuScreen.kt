@@ -14,7 +14,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 
 @Composable
-fun MenuScreen(navController: NavController, modifier: Modifier=Modifier){
+fun MenuScreen(navController: NavController){
     Column(
         modifier = Modifier
             .fillMaxHeight()
@@ -31,6 +31,18 @@ fun MenuScreen(navController: NavController, modifier: Modifier=Modifier){
                 .padding(top = 20.dp)
 
         )
+        Button(
+            onClick = { navController.navigate(route = Screen.List.route)},
+            modifier = Modifier
+                .height(100.dp)
+                .width(200.dp)
+                .padding(top = 32.dp)
+        ) {
+            Text(
+                text = stringResource(R.string.findroute),
+                fontSize = MaterialTheme.typography.h5.fontSize
+            )
+        }
         Button(
             onClick = { navController.navigate(route = Screen.List.route)},
             modifier = Modifier

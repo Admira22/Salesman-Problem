@@ -5,6 +5,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Button
+import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -28,7 +29,7 @@ fun CustomItem(city: City,navController: NavController,modifier: Modifier = Modi
         modifier = Modifier
             .background(Color.LightGray)
             .fillMaxWidth()
-            .padding(24.dp),
+            .padding(12.dp),
         verticalAlignment = Alignment.CenterVertically,
         //horizontalArrangement = Arrangement.spacedBy(1.dp)
     ) {
@@ -49,15 +50,16 @@ fun CustomItem(city: City,navController: NavController,modifier: Modifier = Modi
             fontWeight = FontWeight.Bold
         )
         Button(
-            onClick = { navController.navigate(route = Screen.Menu.route)},
+            onClick = { navController.navigate(route = Screen.CityDetails.route)},
+            colors = ButtonDefaults.buttonColors(backgroundColor = Color.DarkGray),
             modifier = Modifier
-                .height(100.dp)
-                .width(100.dp)
-                .padding(top = 32.dp)
+                .height(50.dp)
+                .width(200.dp)
+                .padding(start = 16.dp)
         ) {
             Text(
                 text = stringResource(R.string.seemore),
-                fontSize = MaterialTheme.typography.h6.fontSize
+
             )
         }
     }
