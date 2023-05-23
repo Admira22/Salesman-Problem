@@ -53,7 +53,14 @@ fun SetupNavGraph(
                longitude = 12.345,
                description = "bla bla",
                image = R.drawable.image2
-           ))
+           ),
+               navController
+           )
+       }
+       composable(
+           route = Screen.Route.route,
+       ){
+           RouteScreen()
        }
 
 
