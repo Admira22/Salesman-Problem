@@ -11,4 +11,5 @@
     <string name="cites" translatable="false">List of cites</string>
     <string name="about" translatable="false">About app</string>
     <string name="seemore" translatable="false">See more</string>
+    <string name="findroute" translatable="false">Find route</string>
 </resources>
