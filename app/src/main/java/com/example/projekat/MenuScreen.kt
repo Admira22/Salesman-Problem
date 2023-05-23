@@ -32,7 +32,7 @@ fun MenuScreen(navController: NavController){
 
         )
         Button(
-            onClick = { navController.navigate(route = Screen.List.route)},
+            onClick = { navController.navigate(route = Screen.Route.route)},
             modifier = Modifier
                 .height(100.dp)
                 .width(200.dp)
