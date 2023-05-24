@@ -8,4 +8,5 @@ sealed class Screen(val route: String){
     object List: Screen(route = "list_screen")
     object CityDetails: Screen(route = "city_screen")
     object Route: Screen(route = "route_screen")
+    object Map: Screen(route = "map_screen")
 }
