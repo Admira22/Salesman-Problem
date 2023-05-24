@@ -62,6 +62,18 @@ fun SetupNavGraph(
        ){
            RouteScreen()
        }
+       composable(
+           route = Screen.Map.route,
+       ){
+           MapScreen(city = City(
+               id = 0,
+               name = "Sarajevo",
+               landitude = 14.234,
+               longitude = 12.345,
+               description = "bla bla",
+               image = R.drawable.image2
+           ))
+       }
 
 
    }

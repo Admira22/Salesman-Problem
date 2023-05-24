@@ -41,14 +41,27 @@ fun CustomItem(city: City,navController: NavController,modifier: Modifier = Modi
                 .clip(RoundedCornerShape(50)),
             contentScale = ContentScale.Crop,
             contentDescription = null)
-        Text(
-            modifier = modifier
-                .padding(start = 20.dp),
-            text = city.name,
-            color = Color.Black,
-            fontSize = MaterialTheme.typography.h5.fontSize,
-            fontWeight = FontWeight.Bold
-        )
+        Column{
+            Text(
+                modifier = modifier
+                    .padding(start = 20.dp),
+                text = city.name,
+                color = Color.Black,
+                fontSize = MaterialTheme.typography.h5.fontSize,
+                fontWeight = FontWeight.Bold
+            )
+            Text(
+                modifier = modifier
+                    .padding(start = 20.dp),
+                text = "${city.landitude}"
+            )
+            Text(
+                modifier = modifier
+                    .padding(start = 20.dp),
+                text = "${city.longitude}"
+            )
+
+        }
         Button(
             onClick = { navController.navigate(route = Screen.CityDetails.route)},
             colors = ButtonDefaults.buttonColors(backgroundColor = Color.DarkGray),
@@ -60,7 +73,8 @@ fun CustomItem(city: City,navController: NavController,modifier: Modifier = Modi
             Text(
                 text = stringResource(R.string.seemore),
 
-            )
+                )
         }
+
     }
 }

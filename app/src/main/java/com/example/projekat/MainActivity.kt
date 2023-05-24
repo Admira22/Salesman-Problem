@@ -6,9 +6,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.material.Scaffold
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Home
-import androidx.compose.material.icons.filled.Info
-import androidx.compose.material.icons.filled.Settings
+import androidx.compose.material.icons.filled.*
 import androidx.compose.material.rememberScaffoldState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
@@ -52,7 +50,13 @@ class MainActivity : ComponentActivity() {
                                     id = "list",
                                     title = "List of cites",
                                     contentDescription = "Go to list of cites",
-                                    icon = Icons.Default.Settings
+                                    icon = Icons.Default.List
+                                ),
+                                MenuItem(
+                                    id = "calculate",
+                                    title = "Find route",
+                                    contentDescription = "Go to route",
+                                    icon = Icons.Default.CheckCircle
                                 ),
                                 MenuItem(
                                     id = "info",
@@ -69,6 +73,9 @@ class MainActivity : ComponentActivity() {
                                     "list" -> {
                                         navController.navigate(route = Screen.List.route)
                                     }
+                                    "calculate" -> {
+                                        navController.navigate(route = Screen.Route.route)
+                                    }
                                     "info" -> {
                                         navController.navigate(route = Screen.Detail.route)
                                     }
@@ -79,6 +86,7 @@ class MainActivity : ComponentActivity() {
                 ) {
                     navController = rememberNavController()
                     SetupNavGraph(navController = navController)
+
                 }
 
 

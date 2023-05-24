@@ -9,7 +9,6 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
@@ -19,9 +18,8 @@ import androidx.compose.ui.unit.dp
 @Composable
 fun RouteScreen(modifier: Modifier = Modifier){
     val image = painterResource(id = R.drawable.image2)
-    val textState1 = Color.Red
-    val textState2 = Color.Blue
-    var selectedOption by remember { mutableStateOf(textState1) }
+    var text1 by remember { mutableStateOf("Enter a name of city...") }
+    var text2 by remember { mutableStateOf("Enter a name of another city...") }
     Column(
         modifier = Modifier
             .fillMaxHeight()
@@ -37,16 +35,20 @@ fun RouteScreen(modifier: Modifier = Modifier){
             contentScale = ContentScale.Crop,
             contentDescription = null)
         TextField(
-            value = "pick the city",
-            onValueChange ={},
+            value = text1,
+            onValueChange ={newText ->
+                text1 = newText
+            },
             modifier = Modifier
                 .height(100.dp)
                 .width(300.dp)
                 .padding(top = 32.dp)
         )
         TextField(
-            value = "pick another one",
-            onValueChange ={},
+            value = text2,
+            onValueChange ={newText ->
+                text2 = newText
+            },
             modifier = Modifier
                 .height(100.dp)
                 .width(300.dp)

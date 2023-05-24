@@ -54,7 +54,7 @@ fun CityDetailScreen(city: City,navController: NavController) {
             modifier = Modifier.padding(start = 16.dp, top = 16.dp, end = 16.dp, bottom = 16.dp)
         )
         Button(
-            onClick = { navController.navigate(route = Screen.CityDetails.route) },
+            onClick = { navController.navigate(route = Screen.Map.route) },
             colors = ButtonDefaults.buttonColors(backgroundColor = Color.DarkGray),
             modifier = Modifier
                 .height(50.dp)
@@ -62,7 +62,6 @@ fun CityDetailScreen(city: City,navController: NavController) {
         ) {
             Text(
                 text = stringResource(R.string.seemap),
-
                 )
         }
 
