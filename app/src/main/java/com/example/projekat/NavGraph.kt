@@ -37,25 +37,16 @@ fun SetupNavGraph(
        composable(
            route = Screen.List.route,
        ){
-           ListScreen()
+           ListScreen(navController = navController)
        }
        composable(
-           route = Screen.CityDetails.route,
-           arguments = listOf(navArgument(DETAIL_ARGUMENT_KEY){
+           route = Screen.CityDetails.route+"/{cityId}",
+           arguments = listOf(navArgument("cityId"){
                type = NavType.IntType
            })
        ){
-           Log.d("Args",it.arguments?.getInt(DETAIL_ARGUMENT_KEY).toString())
-           CityDetailScreen(city = City(
-               id = 0,
-               name = "Sarajevo",
-               landitude = 14.234,
-               longitude = 12.345,
-               description = "bla bla",
-               image = R.drawable.image2
-           ),
-               navController
-           )
+           val cityId=it.arguments?.getInt("cityId").toString()
+           CityDetailScreen(cityId =cityId.toInt(),navController=navController)
        }
        composable(
            route = Screen.Route.route,
@@ -63,18 +54,33 @@ fun SetupNavGraph(
            RouteScreen()
        }
        composable(
-           route = Screen.Map.route,
+           route = Screen.Map.route+"/{cityId}",
+           arguments = listOf(navArgument("cityId"){
+               type = NavType.IntType
+           })
        ){
-           MapScreen(city = City(
+           /*MapScreen(city = City(
                id = 0,
                name = "Sarajevo",
                landitude = 14.234,
                longitude = 12.345,
                description = "bla bla",
                image = R.drawable.image2
-           ))
+           ))*/
+           val cityId=it.arguments?.getInt("cityId").toString()
+           MapScreen(cityId =cityId.toInt() )
+       }
+       composable(
+           route = Screen.StartAlgorithm.route+"/{cityId}",
+           arguments = listOf(navArgument("cityId"){
+               type=NavType.IntType
+           })
+       ){
+           val cityId=it.arguments?.getInt("cityId").toString()
+           StartAlgorithmScreen(cityId = cityId.toInt())
+
        }
 
 
-   }
-}
+   }}
+

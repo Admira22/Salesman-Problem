@@ -57,4 +57,8 @@ class CityRepository {
 
         )
     }
+    fun getCityById(id: Int): City? {
+        return getAllData().find { it.id == id }
+    }
+
 }
