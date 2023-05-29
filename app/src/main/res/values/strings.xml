@@ -13,4 +13,5 @@
     <string name="seemore" translatable="false">See more</string>
     <string name="findroute" translatable="false">Find route</string>
     <string name="seemap" translatable="false">See it on the map</string>
+    <string name="algorithm" translatable="false">Go to algorithm</string>
 </resources>

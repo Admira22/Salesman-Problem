@@ -6,11 +6,13 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
+import com.example.projekat.model.City
 import com.example.projekat.repository.CityRepository
 
 @Composable
-fun ListScreen() {
+fun ListScreen(navController: NavController) {
     val cityRepository = CityRepository()
     val getAllData = cityRepository.getAllData()
     LazyColumn(
@@ -19,7 +21,8 @@ fun ListScreen() {
        verticalArrangement = Arrangement.spacedBy(12.dp)
     ) {
         items(items = getAllData){
-            CustomItem(city = it, navController = rememberNavController())
+            CustomItem(city = it, navController = navController)
+            //rememberNavController()
         }
     }
 }

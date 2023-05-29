@@ -63,7 +63,7 @@ fun CustomItem(city: City,navController: NavController,modifier: Modifier = Modi
 
         }
         Button(
-            onClick = { navController.navigate(route = Screen.CityDetails.route)},
+            onClick = { navController.navigate("${Screen.CityDetails.route}/${city.id}") },
             colors = ButtonDefaults.buttonColors(backgroundColor = Color.DarkGray),
             modifier = Modifier
                 .height(50.dp)
