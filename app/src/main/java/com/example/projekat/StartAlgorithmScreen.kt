@@ -37,7 +37,7 @@ fun StartAlgorithmScreen(cityId: Int) {
                     // Ovdje možete ažurirati shortestRoute sa dobivenim rezultatom iz algoritma
                     shortestRoute.value = algorithm.trenutnaNajkracaRuta
                 },
-                colors = ButtonDefaults.buttonColors(backgroundColor = Color.DarkGray),
+                colors = ButtonDefaults.buttonColors(backgroundColor = Color.LightGray),
                 modifier = Modifier
                     .height(50.dp)
                     .width(400.dp)

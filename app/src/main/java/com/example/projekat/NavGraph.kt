@@ -1,14 +1,12 @@
 package com.example.projekat
 
 
-import android.util.Log
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
-import com.example.projekat.model.City
 
 
 @Composable
@@ -47,11 +45,6 @@ fun SetupNavGraph(
        ){
            val cityId=it.arguments?.getInt("cityId").toString()
            CityDetailScreen(cityId =cityId.toInt(),navController=navController)
-       }
-       composable(
-           route = Screen.Route.route,
-       ){
-           RouteScreen()
        }
        composable(
            route = Screen.Map.route+"/{cityId}",

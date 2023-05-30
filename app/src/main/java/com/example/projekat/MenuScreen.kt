@@ -32,18 +32,6 @@ fun MenuScreen(navController: NavController){
 
         )
         Button(
-            onClick = { navController.navigate(route = Screen.Route.route)},
-            modifier = Modifier
-                .height(100.dp)
-                .width(200.dp)
-                .padding(top = 32.dp)
-        ) {
-            Text(
-                text = stringResource(R.string.findroute),
-                fontSize = MaterialTheme.typography.h5.fontSize
-            )
-        }
-        Button(
             onClick = { navController.navigate(route = Screen.List.route)},
             modifier = Modifier
                 .height(100.dp)

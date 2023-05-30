@@ -7,8 +7,7 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import androidx.navigation.compose.rememberNavController
-import com.example.projekat.model.City
+
 import com.example.projekat.repository.CityRepository
 
 @Composable
@@ -17,7 +16,6 @@ fun ListScreen(navController: NavController) {
     val getAllData = cityRepository.getAllData()
     LazyColumn(
         contentPadding = PaddingValues(all = 12.dp),
-       // verticalArrangement = Arrangement.SpaceAround(all = 10.dp)
        verticalArrangement = Arrangement.spacedBy(12.dp)
     ) {
         items(items = getAllData){

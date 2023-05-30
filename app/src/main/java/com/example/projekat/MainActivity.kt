@@ -1,6 +1,7 @@
 package com.example.projekat
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -32,6 +33,9 @@ class MainActivity : ComponentActivity() {
                                 scope.launch {
                                     scaffoldState.drawerState.open()
                                 }
+                            },
+                            onShareClicked = {
+                                shareContent()
                             }
                         )
                     },
@@ -53,12 +57,6 @@ class MainActivity : ComponentActivity() {
                                     icon = Icons.Default.List
                                 ),
                                 MenuItem(
-                                    id = "calculate",
-                                    title = "Find route",
-                                    contentDescription = "Go to route",
-                                    icon = Icons.Default.CheckCircle
-                                ),
-                                MenuItem(
                                     id = "info",
                                     title = "Info",
                                     contentDescription = "Get help",
@@ -72,9 +70,6 @@ class MainActivity : ComponentActivity() {
                                                }
                                     "list" -> {
                                         navController.navigate(route = Screen.List.route)
-                                    }
-                                    "calculate" -> {
-                                        navController.navigate(route = Screen.Route.route)
                                     }
                                     "info" -> {
                                         navController.navigate(route = Screen.Detail.route)
@@ -92,6 +87,15 @@ class MainActivity : ComponentActivity() {
 
             }
         }
+    }
+    private fun shareContent() {
+        val intent = Intent(Intent.ACTION_SEND).apply {
+            type = "text/plain"
+            putExtra(Intent.EXTRA_SUBJECT, "Shared Content")
+            putExtra(Intent.EXTRA_TEXT, "Content to share")
+        }
+
+        startActivity(Intent.createChooser(intent, "Share via"))
     }
 }
 

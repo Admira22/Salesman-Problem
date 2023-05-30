@@ -19,7 +19,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
-import com.example.projekat.model.City
 import com.example.projekat.repository.CityRepository
 
 @Composable
@@ -49,18 +48,35 @@ fun CityDetailScreen(cityId: Int, navController: NavController) {
                 modifier = Modifier.padding(start = 16.dp, top = 16.dp, end = 16.dp, bottom = 16.dp)
             )
             Text(
+                text = "Coordinates:",
+                textAlign = TextAlign.Justify,
+                fontWeight = FontWeight.Bold,
+                modifier = Modifier.padding(start = 16.dp, end = 16.dp)
+            )
+            Text(
                 text = "${city.landitude}",
                 textAlign = TextAlign.Justify,
                 modifier = Modifier.padding(start = 16.dp, end = 16.dp)
             )
             Text(
+                text = "${city.longitude}",
+                textAlign = TextAlign.Justify,
+                modifier = Modifier.padding(start = 16.dp, bottom = 16.dp, end = 16.dp)
+            )
+            Text(
+                text = "Description:",
+                textAlign = TextAlign.Justify,
+                fontWeight = FontWeight.Bold,
+                modifier = Modifier.padding(start = 16.dp, end = 16.dp)
+            )
+            Text(
                 text = city.description,
                 textAlign = TextAlign.Justify,
-                modifier = Modifier.padding(start = 16.dp, top = 16.dp, end = 16.dp, bottom = 16.dp)
+                modifier = Modifier.padding(start = 16.dp, end = 16.dp, bottom = 16.dp)
             )
             Button(
                 onClick = { navController.navigate("${Screen.Map.route}/${city.id}") },
-                colors = ButtonDefaults.buttonColors(backgroundColor = Color.DarkGray),
+                colors = ButtonDefaults.buttonColors(backgroundColor = Color.LightGray),
                 modifier = Modifier
                     .height(50.dp)
                     .width(400.dp)
@@ -69,9 +85,12 @@ fun CityDetailScreen(cityId: Int, navController: NavController) {
                     text = stringResource(R.string.seemap),
                 )
             }
+            Text(
+                text = "",
+            )
             Button(
                 onClick = { navController.navigate("${Screen.StartAlgorithm.route}/${city.id}") },
-                colors = ButtonDefaults.buttonColors(backgroundColor = Color.DarkGray),
+                colors = ButtonDefaults.buttonColors(backgroundColor = Color.LightGray),
                 modifier = Modifier
                     .height(50.dp)
                     .width(400.dp)
