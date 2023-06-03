@@ -8,4 +8,5 @@ sealed class Screen(val route: String){
     object CityDetails: Screen(route = "city_screen")
     object Map: Screen(route = "map_screen")
     object StartAlgorithm: Screen(route = "algorithm_screen")
+    object SeeRoute:Screen(route = "path_route")
 }
