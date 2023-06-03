@@ -62,7 +62,7 @@ class CityRepository {
                         " It is situated on the banks of river Una in northwestern Bosnia and Herzegovina, in the Bosanska Krajina region."
             ),
 
-        )
+            )
     }
     fun getCityById(id: Int): City? {
         return getAllData().find { it.id == id }

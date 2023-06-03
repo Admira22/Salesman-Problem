@@ -7,6 +7,11 @@ import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
+import com.example.projekat.model.City
+import com.squareup.moshi.JsonAdapter
+import com.squareup.moshi.Moshi
+import com.squareup.moshi.Types
+import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 
 
 @Composable
@@ -52,14 +57,6 @@ fun SetupNavGraph(
                type = NavType.IntType
            })
        ){
-           /*MapScreen(city = City(
-               id = 0,
-               name = "Sarajevo",
-               landitude = 14.234,
-               longitude = 12.345,
-               description = "bla bla",
-               image = R.drawable.image2
-           ))*/
            val cityId=it.arguments?.getInt("cityId").toString()
            MapScreen(cityId =cityId.toInt() )
        }
@@ -70,10 +67,28 @@ fun SetupNavGraph(
            })
        ){
            val cityId=it.arguments?.getInt("cityId").toString()
-           StartAlgorithmScreen(cityId = cityId.toInt())
+           StartAlgorithmScreen(cityId = cityId.toInt(),navController=navController)
 
        }
+       composable(
+           route = Screen.SeeRoute.route+"/{cityId}/{gradoviJson}",
+           arguments = listOf(navArgument("cityId"){
+               type=NavType.IntType
+           })
+       ){
+           val cityId=it.arguments?.getInt("cityId").toString()
+           val gradJson=it.arguments?.getString("gradoviJson")
+           gradJson?.let {
+               val moshi=Moshi.Builder()
+                   .addLast(KotlinJsonAdapterFactory())
+                   .build()
+               val jsonAdapter: JsonAdapter<List<City>> = moshi.adapter<List<City>>(
+                   Types.newParameterizedType(List::class.java, City::class.java)
+               )
+               val gradJson=jsonAdapter.fromJson(gradJson)
+           }
+           SeeRouteScreen(cityId = cityId.toInt(), gradoviJson = gradJson.toString())
 
-
+       }
    }}
 

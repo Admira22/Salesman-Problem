@@ -14,4 +14,6 @@
     <string name="findroute" translatable="false">Find route</string>
     <string name="seemap" translatable="false">See it on the map</string>
     <string name="algorithm" translatable="false">Go to algorithm</string>
+    <string name="description" translatable="false">Izabrani grad</string>
+    <string name="startA" translatable="false">START ALGORITHM</string>
 </resources>
