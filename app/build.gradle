@@ -68,5 +68,5 @@ dependencies {
     implementation 'com.google.android.gms:play-services-maps:18.0.2'
 
     //Prikaz rute
-    implementation("com.squareup.moshi:moshi-kotlin:1.14.0")
+    implementation 'com.squareup.moshi:moshi-kotlin:1.14.0'
 }
